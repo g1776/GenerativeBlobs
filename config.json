@@ -1,15 +1,17 @@
 {
     "constants": {
-        "speed": 0.003
+        "speed": 0.05
     },
     "mapping": {
         "n_lines": {
             "scale": "identity",
-            "multiplier": 1,
-            "offset": 7
+    
+            "multiplier": 0.01,
+            "offset": 3
         },
         "line_len_std": {
-            "multiplier": 0.7,
+            "scale": "normalize",
+            "multiplier": 3,
             "offset": 2
         }
     }

@@ -42,6 +42,9 @@ export default class Mapper {
                 case "log":
                     this.mappings[key] = this.logTransform(key);
                     break;
+                case "poly":
+                    this.mappings[key] = this.polyTransform(key);
+                    break;
                 case "identity":
                     this.mappings[key] = this.identity(key);
                     break;
@@ -100,6 +103,15 @@ export default class Mapper {
         const logBase = this.__config?.mapping[key]?.logBase || Math.E;
 
         return d => Math.log(mapping(d)) / Math.log(logBase);
+    }
+
+    polyTransform(key) {
+        const mapping = this.mappings[key]
+
+        // get base for log transform. Default 2
+        const polyExponent = this.__config?.mapping[key]?.polyExponent || 2;
+
+        return d => mapping(d) ** polyExponent;
     }
 
     map(file) {

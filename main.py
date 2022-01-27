@@ -57,7 +57,7 @@ if __name__ == "__main__":
     ]
 
     # scan project
-    project_scan = scanProj(r"C:\Users\grego\OneDrive\Projects\Python Projects\Instruments", include=include)
+    project_scan = scanProj(r"C:\Users\grego\Downloads\vscode-main\vscode-main", include=include)
     print("Generating", len(project_scan), "blobs. Enjoy!", sep=" ")
 
     # save to out.json
