@@ -5,7 +5,7 @@ function showTooltip(evt, file) {
 
     myTooltip.style.left = (evt.clientX + 20) + "px";
     myTooltip.style.top = (window.scrollY + evt.clientY - 20) + "px";
-    myTooltip.style.display = "block";
+    myTooltip.classList.add("active");
 
     const htmlList = Object.keys(file).map(key => {
         return `<li>${key} - ${file[key]}</li>`
@@ -18,7 +18,7 @@ function showTooltip(evt, file) {
 
 function hideTooltip(evt) {
     var myTooltip = document.getElementById("my-tooltip");
-    myTooltip.style.display = "none";
+    myTooltip.classList.remove("active");
 }
 
 export { showTooltip, hideTooltip };
