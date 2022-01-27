@@ -1,0 +1,12 @@
+{
+    "mapping": {
+        "n_lines": {
+            "scale": "identity",
+            "multiplier": 0.01
+        },
+        "line_len_std": {
+            "transform": "log",
+            "multiplier": 0.5
+        }
+    }
+}
