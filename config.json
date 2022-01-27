@@ -1,12 +1,16 @@
 {
+    "constants": {
+        "speed": 0.003
+    },
     "mapping": {
         "n_lines": {
             "scale": "identity",
-            "multiplier": 0.01
+            "multiplier": 1,
+            "offset": 7
         },
         "line_len_std": {
-            "transform": "log",
-            "multiplier": 0.5
+            "multiplier": 0.7,
+            "offset": 2
         }
     }
 }

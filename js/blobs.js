@@ -2,6 +2,9 @@ import { spline } from 'https://cdn.skypack.dev/@georgedoescode/spline@1.0.1';
 import SimplexNoise from 'https://cdn.skypack.dev/simplex-noise@2.4.0';
 import { showTooltip, hideTooltip } from 'http://localhost:8001/js/tooltip.js';
 
+import config from '../config.json' assert { type: "json" };
+
+
 export default function createBlob({
         file,
 
@@ -9,7 +12,7 @@ export default function createBlob({
         POS = {x: 100, y: 100},
         
         // movement
-        NOISE_STEP = 0.05, // how fast we progress through "time" (blob speed)
+        NOISE_STEP = config.constants.speed, // how fast we progress through "time" (blob speed)
         NOISE_STEP_HOVER = 3, // multiplier for speed increase on hover
 
         // size and shape

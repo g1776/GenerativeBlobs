@@ -51,11 +51,13 @@ if __name__ == "__main__":
 
     include = [
         'ts',
-        'js'
+        'js',
+        'jsx',
+        "py"
     ]
 
     # scan project
-    project_scan = scanProj(r"C:\Users\grego\Downloads\vscode-main\vscode-main", include=include)
+    project_scan = scanProj(r"C:\Users\grego\OneDrive\Projects\Python Projects\Instruments", include=include)
     print("Generating", len(project_scan), "blobs. Enjoy!", sep=" ")
 
     # save to out.json
