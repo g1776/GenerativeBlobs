@@ -1,6 +1,6 @@
 {
     "constants": {
-        "speed": 0.05
+        "speed": 0.005
     },
     "mapping": {
         "n_lines": {

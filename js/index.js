@@ -13,13 +13,13 @@ const mapped = data.map(file => mapper.map(file))
 
 
 // create blobs
-mapped.forEach(file => {
+const animations = mapped.map(file => {
     const blob_params = {
         RADIUS: file.n_lines, 
         MAGNITUDE: file.line_len_std
     };
 
-    createBlob({
+    const animate = createBlob({
         file: file,
         
         POS: {
@@ -28,4 +28,12 @@ mapped.forEach(file => {
         },
         ...blob_params
     });
-})
+
+    return animate;
+});
+
+(function animateAll() {
+    animations.forEach(animate => animate());
+
+    requestAnimationFrame(animateAll);
+})();

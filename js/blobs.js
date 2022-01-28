@@ -89,7 +89,7 @@ export default function createBlob({
 
 
     // morph blob point locations, animating over time
-    (function animate() {
+    function animate() {
 
         // for every point...
         for (let i = 0; i < points.length; i++) {
@@ -123,8 +123,7 @@ export default function createBlob({
         root.style.setProperty("--stopColor", `hsl(${hue + 60}, 100%, 75%)`);
         document.body.style.background = `hsl(${hue + 60}, 75%, 6%)`;
 
-        requestAnimationFrame(animate)
-    })();
+    };
 
     // add hover effect
     path.addEventListener("mouseover", () => {
@@ -133,6 +132,8 @@ export default function createBlob({
     path.addEventListener("mouseout", () => {
         currentSpeed = NOISE_STEP;
     })
+
+    return animate;
 }
 
 
